@@ -8,6 +8,7 @@ public class Settings : MonoBehaviour
     public Slider slider_music;
     public Slider slider_sound;
 
+    public Toggle toggle_postProcessing;
     public AudioSource audio_music;
 
     void Start()
@@ -20,6 +21,12 @@ public class Settings : MonoBehaviour
         if(PlayerPrefs.HasKey("soundValume"))
         {
             slider_sound.value = PlayerPrefs.GetFloat("soundValume");
+        }
+        if(PlayerPrefs.HasKey("prostProcessing"))
+        {
+            int i = PlayerPrefs.GetInt("prostProcessing");
+            if(i == 1) toggle_postProcessing.isOn = true;
+            else toggle_postProcessing.isOn = false;
         }
         
     }
@@ -36,5 +43,10 @@ public class Settings : MonoBehaviour
         float valume_sound = slider_sound.value;
         
         PlayerPrefs.SetFloat("soundValume",valume_sound);
+    }
+    public void postProccesing_Change()
+    {
+        if(toggle_postProcessing.isOn) PlayerPrefs.SetInt("prostProcessing",1);
+        else PlayerPrefs.SetInt("prostProcessing",0);
     }
 }

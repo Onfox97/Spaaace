@@ -36,6 +36,7 @@ public class DeathScreen : MonoBehaviour
     }
     public void GoToMenu()
     {
+        ScoreSystem.score = 0;
         SceneManager.LoadScene(0);
     }
 }
