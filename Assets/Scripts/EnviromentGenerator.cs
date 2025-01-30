@@ -13,7 +13,6 @@ public class EnviromentGenerator : MonoBehaviour
     void Start()
     {
         populateEnviroment();
-    
     }
 
     // Update is called once per frame
@@ -28,7 +27,11 @@ public class EnviromentGenerator : MonoBehaviour
         {
             GameObject checkObject = objectTransform.gameObject;
             Vector2 objectPosition = checkObject.transform.position;
+
+            //přeměna na relativní pozici
             objectPosition -=  (Vector2)transform.position;
+
+            //kontrola, jestli je objekt za hranicí
 
             if(objectPosition.x > reach )
             {
@@ -104,6 +107,7 @@ public class EnviromentGenerator : MonoBehaviour
     {
         float rng = Random.value;
         float chance_sum = 0;
+
         for(int i =0; i < Objects.Length;i++)
         {
             chance_sum += Objects[i].chance/100;

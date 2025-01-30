@@ -4935,12 +4935,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   missile_target: {fileID: 0}
-  rotation_speed: 8
+  rotation_speed: 6
   missile_speed: 12.5
-  wobble_speed: 5
+  wobble_speed: 10
   wobble_strenght: 0.65
   test_missile_forceSpeed: 800
-  fuel: 10
+  fuel: 7.5
   prefab_explosion: {fileID: 4515925308293320561, guid: 794659b1fe150844da6dbb427a658e43, type: 3}
 --- !u!50 &4871300018926751045
 Rigidbody2D:

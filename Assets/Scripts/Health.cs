@@ -8,8 +8,14 @@ public class Health : MonoBehaviour
 
     public UnityEvent on_death;
     public int health;
+    public int health_max = 100;
+    [SerializeField] float healthRegenRate = 0;
     public AudioSource audio_hit;
 
+    private void Start() 
+    {
+        StartCoroutine(healthRegen());
+    }
     public void Damage(int damage)
     {
         health -= damage;
@@ -26,5 +32,14 @@ public class Health : MonoBehaviour
         Damage(damage);
 
         if(audio_hit != null) audio_hit.Play();
+    }
+    IEnumerator healthRegen()
+    {
+        yield return new WaitForSeconds(healthRegenRate);
+        health++;
+
+        if(health > health_max) health = health_max;
+
+        StartCoroutine(healthRegen());
     }
 }

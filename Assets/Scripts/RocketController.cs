@@ -9,7 +9,7 @@ public class RocketController : MonoBehaviour
     public float rocket_acceleration;   //síla akcelerace rakety
     public float rocket_rotation_acceleration;
     public float maximal_rocket_speed;  //definuje maximální rychlost rakety při které může akcelerovat
-    public float fuel_maximal;
+    public float fuel_maximal;  
     public float fuel_consuption;
 
 
@@ -47,12 +47,13 @@ public class RocketController : MonoBehaviour
     {
         RocketControll();
 
-        //fuel check
+        //kontrola paliva
         if(fuel_current < 0) 
         {
             health.Die();
             Die();
         }
+
         if(fuel_current > fuel_maximal) fuel_current = fuel_maximal;
 
         
@@ -63,6 +64,7 @@ public class RocketController : MonoBehaviour
         if(Input.GetKey(key_rocket_accelerate))
         {
             RocketAccelerate();
+
             if(!particle_foward.isPlaying)  particle_foward.Play();
             if(!audio_thruster_foward.isPlaying) audio_thruster_foward.Play();
         }
@@ -76,6 +78,7 @@ public class RocketController : MonoBehaviour
         if(Input.GetKey(key_rocket_turn_left))
         {
             RocketTurn(1);
+
             if(!particle_left.isPlaying)    particle_left.Play();
             if(!audio_thruster_left.isPlaying) audio_thruster_left.Play();
         }
@@ -88,6 +91,7 @@ public class RocketController : MonoBehaviour
         if(Input.GetKey(key_rocket_turn_right))
         {
             RocketTurn(-1);
+
             if(!particle_right.isPlaying)   particle_right.Play();
              if(!audio_thruster_right.isPlaying) audio_thruster_right.Play();
             
@@ -100,6 +104,7 @@ public class RocketController : MonoBehaviour
     }
     void RocketAccelerate()
     {
+        //kontrola max rychlosti
         if(rig.velocity.magnitude <= maximal_rocket_speed)
         {
             fuel_current -= fuel_consuption * Time.deltaTime;

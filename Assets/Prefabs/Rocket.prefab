@@ -227,7 +227,7 @@ Rigidbody2D:
   m_UseAutoMass: 0
   m_Mass: 1
   m_LinearDrag: 0.25
-  m_AngularDrag: 0.01
+  m_AngularDrag: 1
   m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
@@ -247,10 +247,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rocket_acceleration: 300
-  rocket_rotation_acceleration: 80
-  maximal_rocket_speed: 800
+  rocket_rotation_acceleration: 120
+  maximal_rocket_speed: 1000
   fuel_maximal: 100
-  fuel_consuption: 1
+  fuel_consuption: 2
   key_rocket_accelerate: 119
   key_rocket_turn_left: 97
   key_rocket_turn_right: 100
@@ -302,6 +302,8 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   health: 100
+  health_max: 100
+  healthRegenRate: 0.5
   audio_hit: {fileID: 7109782789106207262}
 --- !u!68 &5074357001213482017
 EdgeCollider2D:

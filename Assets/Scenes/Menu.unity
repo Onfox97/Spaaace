@@ -6090,7 +6090,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 9689ca0f07127b64c8f51afefc83f116, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 54a1d265e5cfa7e4caf216484e448a26, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 0.5
   m_Pitch: 1
@@ -11508,9 +11508,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Game by Ondrej R. Liscak
-
-    Music by Wipics'
+  m_text: Game by Ondrej R. Liscak
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: bb0ef8944a29d414cb8055c8b5c61360, type: 2}
   m_sharedMaterial: {fileID: 8715522853139655295, guid: bb0ef8944a29d414cb8055c8b5c61360, type: 2}
@@ -16510,7 +16508,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1396489408
 RectTransform:
   m_ObjectHideFlags: 0

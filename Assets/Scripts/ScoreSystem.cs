@@ -7,10 +7,6 @@ public class ScoreSystem : MonoBehaviour
 {
     public static int score = 0;
     public TextMeshProUGUI text_dispay_score;
-    void Start()
-    {
-        
-    }
     void Update()
     {
         text_dispay_score.text = "SCORE:"+score.ToString();

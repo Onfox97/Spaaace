@@ -25,13 +25,15 @@ public class Asteroid : MonoBehaviour
 
         int i = Random.Range(0,sprites.Length);
         spriteRenderer.sprite = sprites[i];
-        //Scale
+
+        //náhodná velikost
         if(changeScale == true)
         {
             float new_asteroid_scale = Random.Range(asteroid_size_minimal,asteroid_size_maximal);
             transform.localScale = new Vector3(new_asteroid_scale,new_asteroid_scale,new_asteroid_scale);
         }
-        //Rotation
+
+        //náhodná rotace
         float new_asteroid_rotation = Random.Range(0,359);
         transform.rotation = Quaternion.Euler(0,0,new_asteroid_rotation);
     }
